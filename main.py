@@ -66,6 +66,6 @@ def clusters(distances, speeds, centroids=None, repetitions=4):
 ################################################################
 guess_centroid(normalized_distances, normalized_speeds)
 
-main(normalized_distances, normalized_speeds, ((-.5, .5), (-.5, 1.5), (2, 0), (2, 4), (1, 3)))
+clusters(normalized_distances, normalized_speeds, ((-.5, .5), (-.5, 1.5), (2, 0), (2, 4), (1, 3)))
 
 
