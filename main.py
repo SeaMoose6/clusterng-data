@@ -19,15 +19,7 @@ normalized_speeds = data['normalized_speed'].values.tolist()
 
 ##### FUNCTIONS #####
 
-def guess_centroid(distances, speeds):
-    plt.scatter(distances, speeds)
-    plt.show()
-    centroid_input = input('Input Centroid Locations: ')
-    centroids = eval(centroid_input)
-    return centroids
-
-
-def distance(distances, speeds, centroids=None):
+def dist(distances, speeds, centroids=None):
     if centroids is None:
         centroids = guess_centroid(distances, speeds)
 
@@ -65,7 +57,7 @@ def calculate_new_centroids(distances, speeds, clusters):
     return new_centroids
 
 
-def main(distances, speeds, centroids=None, repetitions=4):
+def clusters(distances, speeds, centroids=None, repetitions=4):
     for n in range(repetitions):
         clusters = distance(distances, speeds, centroids)
         centroids = calculate_new_centroids(distances, speeds, clusters)
